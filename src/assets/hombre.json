@@ -1,5 +1,25 @@
 [
   {
+    "imagen" : "https://eggo.tienda/2691-home_default/camisa-tommy-hilfiger-flex-multi-.jpg",
+    "nombre" : "Camisa",
+    "descripcion" :"Camisa de hombre con cuello",
+    "talla" : "Mediana",
+    "precio" : "$300"
+  },
 
+  {
+    "imagen" : "https://http2.mlstatic.com/bermuda-short-hombre-corta-casual-coral-moda-playa-g80501-D_NQ_NP_965908-MLM31238066688_062019-F.jpg",
+    "nombre" : "Short",
+    "descripcion" :"Bermuda Short Hombre Corta Casual Coral Moda Playa",
+    "talla" : "Chico",
+    "precio" : "$250"
+  },
+
+  {
+    "imagen" : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRrb60tc51yR-KyRH1b7-eeaMdfEEPo6QawgQ&usqp=CAU",
+    "nombre" : "Chamarra",
+    "descripcion" :"Cazadora/Parka Hombre para alguna reunion",
+    "talla" : "Chico",
+    "precio" : "$590"
   }
 ]
