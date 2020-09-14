@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { MujerComponent } from './pages/mujer/mujer.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HombreComponent } from './pages/hombre/hombre.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { HombreComponent } from './pages/hombre/hombre.component';
     BrowserModule,
     RouterModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

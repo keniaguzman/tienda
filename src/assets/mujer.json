@@ -1,0 +1,23 @@
+[
+  {
+    "imagen" : "https://images-na.ssl-images-amazon.com/images/I/41kfZx5qh%2BL._AC_UX385_.jpg",
+    "nombre" : "Sudadera",
+    "descripcion" :"Cuello circular y mangas con franjas negras",
+    "talla" : "Mediana",
+    "precio" : "$350"
+  },
+  {
+    "imagen" : "https://images-na.ssl-images-amazon.com/images/I/51KYvfCd0fL._AC_SX466._SX._UX._SY._UY_.jpg",
+    "nombre" : "Playera",
+    "descripcion" : "Playera con estampado planeta",
+    "talla" : "Grande",
+    "precio" : "$190"
+  },
+  {
+    "imagen" : "https://www.visitmacysusa.com/sites/default/files/styles/large_square/public/mm19_329113973_springfashionarticle_900x900_32.jpg?itok=JVFkh2he",
+    "nombre" : "Sueter",
+    "descripcion" : "Bordado de algodon",
+    "talla" : "Chico",
+    "precio" : "$490"
+  }
+]

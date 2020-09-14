@@ -1,1 +1,14 @@
 <p>hombre works!</p>
+<div>
+  <div class="card-deck">
+    <div class="card" *ngFor="let prenda of prendas">
+      <img src="{{ prenda.imagen }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ prenda.nombre }}</h5>
+        <p class="card-text">{{ prenda.descripcion }}</p>
+        <p class="card-text">{{ prenda.talla }}</p>
+        <p class="card-text"><small class="text-muted">{{ prenda.precio}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
