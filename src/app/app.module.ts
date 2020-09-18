@@ -6,13 +6,18 @@ import { MujerComponent } from './pages/mujer/mujer.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { HombreComponent } from './pages/hombre/hombre.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavComponent } from './components/nav/nav.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MujerComponent,
-    HombreComponent
+    HombreComponent,
+    NavComponent,
+    CarouselComponent,
+
   ],
   imports: [
     BrowserModule,

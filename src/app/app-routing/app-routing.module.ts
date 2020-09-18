@@ -6,7 +6,7 @@ import { HombreComponent} from '../pages/hombre/hombre.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'mujer',
     component: MujerComponent,
   },
   {
