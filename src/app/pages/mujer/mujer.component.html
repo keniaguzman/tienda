@@ -36,7 +36,8 @@
       </div>
       <div class="col-md-3 mb-3">
         <label for="validationDefault01">Imagen</label>
-        <input  name="esImagenValida" ngModel pattern="((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?" type="text" class="form-control" [(ngModel)]="prenda.imagen"  value="" required>
+        <input  name="esImagenValida" type="url" class="form-control" [(ngModel)]="prenda.imagen"  value="" required>
+        <label class="rojo" *ngIf=invalido.imagen>Imagen Incorrecta</label>
       </div>
     </div>
     <div class="form-row col-md-6 mb-3">

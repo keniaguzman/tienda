@@ -15,6 +15,13 @@ export class MujerComponent implements OnInit {
     descripcion:"",
     imagen:""
   }
+  invalido= {
+    nombre:false,
+    talla:false,
+    precio:false,
+    descripcion:false,
+    imagen:false
+  }
   constructor(private ropa : RopaService) { }
 
   ngOnInit(): void {
@@ -25,6 +32,7 @@ export class MujerComponent implements OnInit {
   }
 
   guardaPrenda(fguardaPrenda:NgForm) {
+    this.invalido.imagen=false;
     if (fguardaPrenda.invalid) {
       if (! this.esUnNombreValido(this.prenda.nombre)) {
         console.log("Nombre invalido");
@@ -37,6 +45,7 @@ export class MujerComponent implements OnInit {
       }
       if (! this.esImagenValida(this.prenda.imagen)) {
         console.log("URL imagen invalida");
+        this.invalido.imagen=true;
       }
       console.log("valido");
       return;
