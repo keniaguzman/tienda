@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './components/nav/nav.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 
+import { FormsModule }   from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
