@@ -10,6 +10,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 
 import { FormsModule }   from '@angular/forms';
+import { AdminComponent } from './pages/admin/admin.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FormsModule }   from '@angular/forms';
     HombreComponent,
     NavComponent,
     CarouselComponent,
+    AdminComponent,
 
   ],
   imports: [

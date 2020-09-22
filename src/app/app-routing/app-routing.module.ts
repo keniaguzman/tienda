@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { MujerComponent } from '../pages/mujer/mujer.component';
 import { HombreComponent} from '../pages/hombre/hombre.component';
+import { AdminComponent} from '../pages/admin/admin.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'hombre',
     component: HombreComponent,
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
   },
 ];
 
