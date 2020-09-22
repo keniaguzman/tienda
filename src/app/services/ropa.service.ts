@@ -18,4 +18,15 @@ export class RopaService {
       console.error(error.headers);
     }
   }
+
+  guardarRopa(prenda){
+    console.log(prenda);
+    try {
+      return this.http.post(this.baseUrl, prenda)
+    } catch(error) {
+      console.error(error);
+      console.error(error.error);
+      console.error(error.headers);
+    }
+  }
 }

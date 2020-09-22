@@ -10,6 +10,8 @@ import { compileNgModule } from '@angular/compiler';
 })
 export class AgregarRopaComponent implements OnInit {
   prendas = [];
+  estaGuardado:any;
+  debeOcultarse:boolean=false;
   prenda= {
     nombre:"",
     talla:"",
@@ -24,9 +26,13 @@ export class AgregarRopaComponent implements OnInit {
     descripcion:false,
     imagen:false
   }
-  constructor(private ropa : RopaService) { }
+  constructor(private ropa : RopaService) {
+
+
+  }
 
   ngOnInit(): void {
+    this.estaGuardado=false;
     this.ropa.obtenerRopa("admin")
                 .subscribe((prendasRecibidas:any)=>{
                   this.prendas=prendasRecibidas;
@@ -35,13 +41,31 @@ export class AgregarRopaComponent implements OnInit {
 
   guardaPrenda(fguardaPrenda:NgForm) {
     if (this.formularioValido(fguardaPrenda)) {
+      this.ropa.guardarRopa(this.prenda)
+      .subscribe((respuesta:any)=>{
+        if(respuesta.mensaje == "ok" ) {
+          this.estaGuardado=true;
+          this.prenda.nombre='';
+          this.prenda.talla='';
+          this.prenda.precio='';
+          this.prenda.imagen='';
+          this.prenda.descripcion='';
+          setTimeout(() => {
+            this.estaGuardado=false;
+
+          },2000);
+        }
+        console.log(this.estaGuardado);
+      })
 
       console.log("Valido");
     }else{
       console.log("Invalido");
     }
-    return;
-
+    this.ropa.guardarRopa("mujer")
+    .subscribe((prendasRecibidas:any)=>{
+      this.prendas=prendasRecibidas
+    })
 
   }
   esUnNombreValido(nombre){

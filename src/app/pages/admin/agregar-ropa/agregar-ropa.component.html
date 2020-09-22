@@ -1,4 +1,10 @@
 <app-nav></app-nav>
+<div *ngIf="estaGuardado&&!debeOcultarse" class="alert alert-warning " role="alert">
+  <strong>¡Guardado con Exito!</strong> Tus datos se guardaron correctamente.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 <form (ngSubmit)="guardaPrenda(fguardaPrenda)" #fguardaPrenda="ngForm" >
   <div class="form-row">
     <div class="col-md-3 mb-3">
@@ -34,4 +40,7 @@
       <textarea class="form-control" [(ngModel)]="prenda.descripcion" name="descripcion" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
   <button class="btn btn-primary col-md-3 mb-3" type="submit">Publicar</button>
+
 </form>
+
+
