@@ -10,7 +10,8 @@ import { NavComponent } from './components/nav/nav.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 
 import { FormsModule }   from '@angular/forms';
-import { AdminComponent } from './pages/admin/admin.component';
+import { ListadoRopaComponent } from './pages/admin/listado-ropa/listado-ropa.component';
+import { AgregarRopaComponent } from './pages/admin/agregar-ropa/agregar-ropa.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AdminComponent } from './pages/admin/admin.component';
     HombreComponent,
     NavComponent,
     CarouselComponent,
-    AdminComponent,
+    ListadoRopaComponent,
+    AgregarRopaComponent,
 
   ],
   imports: [

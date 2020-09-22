@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { MujerComponent } from '../pages/mujer/mujer.component';
 import { HombreComponent} from '../pages/hombre/hombre.component';
-import { AdminComponent} from '../pages/admin/admin.component';
+import { AgregarRopaComponent} from '../pages/admin/agregar-ropa/agregar-ropa.component';
+import { ListadoRopaComponent} from '../pages/admin/listado-ropa/listado-ropa.component';
 
 const routes: Routes = [
   {
@@ -15,8 +16,12 @@ const routes: Routes = [
     component: HombreComponent,
   },
   {
-    path: 'admin',
-    component: AdminComponent,
+    path: 'agregarRopa',
+    component:  AgregarRopaComponent,
+  },
+  {
+    path: 'listadoRopa',
+    component:  ListadoRopaComponent,
   },
 ];
 

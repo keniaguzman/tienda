@@ -4,6 +4,7 @@
     <div class="col-md-3 mb-3">
       <label for="validationDefault01">Nombre de prenda</label>
       <input  name="esUnNombreValido" ngModel pattern="[a-zA-Z ]*" type="text" class="form-control" [(ngModel)]="prenda.nombre"  value="" required>
+      <label class="rojo" *ngIf=invalido.imagen>Nombre Incorrecto</label>
     </div>
     <div class="col-md-3 mb-3">
       <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Talla</label>
@@ -13,12 +14,14 @@
         <option value="M">M</option>
         <option value="G">G</option>
       </select>
+      <label class="rojo" *ngIf=invalido.imagen>Talla Incorrecta</label>
     </div>
   </div>
   <div class="form-row">
     <div class="col-md-3 mb-3">
       <label for="validationDefault02">precio</label>
       <input  name="esPrecioValida" ngModel pattern="[[0-9]+(\.[0-9][0-9]?)?]*" type="number" class="form-control" [(ngModel)]="prenda.precio"  id="validationDefault02" value="Otto" required>
+      <label class="rojo" *ngIf=invalido.imagen>Precio Invalido</label>
     </div>
     <div class="col-md-3 mb-3">
       <label for="validationDefault01">Imagen</label>
@@ -32,25 +35,3 @@
   </div>
   <button class="btn btn-primary col-md-3 mb-3" type="submit">Publicar</button>
 </form>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Talla</th>
-      <th scope="col">Precio</th>
-      <th scope="col">Direccion de imagen</th>
-      <th scope="col">Descripción</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-    </tr>
-  </tbody>
-</table>
