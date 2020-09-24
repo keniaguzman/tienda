@@ -1,24 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { RopaService } from '../../../services/ropa.service';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import {NgForm} from '@angular/forms'
-import { compileNgModule } from '@angular/compiler';
+
+
+
 
 @Component({
-  selector: 'app-agregar-ropa',
-  templateUrl: './agregar-ropa.component.html',
-  styleUrls: ['./agregar-ropa.component.css']
+  selector: 'app-modificar-ropa',
+  templateUrl: './modificar-ropa.component.html',
+  styleUrls: ['./modificar-ropa.component.css']
 })
-export class AgregarRopaComponent implements OnInit {
-  prendas = [];
+
+
+export class ModificarRopaComponent implements OnInit {
+  prendas=[];
   estaGuardado:any;
   debeOcultarse:boolean=false;
-  prenda= {
+  prenda:{
+    id:"",
     nombre:"",
     talla:"",
     precio:"",
     descripcion:"",
     imagen:""
-  }
+  };
+  id;
   invalido= {
     nombre:false,
     talla:false,
@@ -26,22 +33,28 @@ export class AgregarRopaComponent implements OnInit {
     descripcion:false,
     imagen:false
   }
-  constructor(private ropa : RopaService) {
-
-
-  }
+  constructor(private ropa : RopaService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.estaGuardado=false;
-    this.ropa.obtenerRopa("admin")
-                .subscribe((prendasRecibidas:any)=>{
-                  this.prendas=prendasRecibidas;
-                })
+
+    this.ropa.obtenerPrenda(this.obtenerRuta())
+    .subscribe((prendaRecibidas:any)=>{
+      console.log(prendaRecibidas);
+      this.prenda=prendaRecibidas;
+    })
   }
 
-  guardaPrenda(fguardaPrenda:NgForm) {
-    if (this.formularioValido(fguardaPrenda)) {
-      this.ropa.guardarRopa(this.prenda)
+  obtenerRuta(){
+    this.route.params.subscribe(params => {
+      this.id= params['ropa_id'];
+      return this.id;
+    });
+    return this.id;
+  }
+
+  modificaPrenda(fmodificaPrenda:NgForm) {
+    if (this.formularioValido(fmodificaPrenda)) {
+      this.ropa.modificasPrenda(this.prenda,this.id)
       .subscribe((respuesta:any)=>{
         if(respuesta.mensaje == "ok" ) {
           this.estaGuardado=true;
@@ -52,7 +65,6 @@ export class AgregarRopaComponent implements OnInit {
           this.prenda.descripcion='';
           setTimeout(() => {
             this.estaGuardado=false;
-
           },2000);
         }
         console.log(this.estaGuardado);

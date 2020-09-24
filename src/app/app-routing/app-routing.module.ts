@@ -5,6 +5,7 @@ import { MujerComponent } from '../pages/mujer/mujer.component';
 import { HombreComponent} from '../pages/hombre/hombre.component';
 import { AgregarRopaComponent} from '../pages/admin/agregar-ropa/agregar-ropa.component';
 import { ListadoRopaComponent} from '../pages/admin/listado-ropa/listado-ropa.component';
+import { ModificarRopaComponent} from '../pages/admin/modificar-ropa/modificar-ropa.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'listadoRopa',
     component:  ListadoRopaComponent,
+  },
+  {
+    path: 'modificarRopa/:ropa_id',
+    component:  ModificarRopaComponent,
   },
 ];
 

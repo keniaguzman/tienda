@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RopaService } from '../../../services/ropa.service';
 
 @Component({
   selector: 'app-listado-ropa',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listado-ropa.component.css']
 })
 export class ListadoRopaComponent implements OnInit {
+  prendas=[];
 
-  constructor() { }
+  constructor(private ropa : RopaService) { }
 
   ngOnInit(): void {
+    this.ropa.obtenerRopa("hombre")
+                .subscribe((prendasRecibidas:any)=>{
+                  this.prendas=prendasRecibidas
+                })
   }
+
+
+
 
 }

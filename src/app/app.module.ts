@@ -12,6 +12,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { FormsModule }   from '@angular/forms';
 import { ListadoRopaComponent } from './pages/admin/listado-ropa/listado-ropa.component';
 import { AgregarRopaComponent } from './pages/admin/agregar-ropa/agregar-ropa.component';
+import { ModificarRopaComponent } from './pages/admin/modificar-ropa/modificar-ropa.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { AgregarRopaComponent } from './pages/admin/agregar-ropa/agregar-ropa.co
     CarouselComponent,
     ListadoRopaComponent,
     AgregarRopaComponent,
+    ModificarRopaComponent,
 
   ],
   imports: [

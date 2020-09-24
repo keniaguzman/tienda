@@ -5,18 +5,18 @@
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
-<form (ngSubmit)="guardaPrenda(fguardaPrenda)" #fguardaPrenda="ngForm" >
+<form (ngSubmit)="modificaPrenda(fmodificaPrenda)" *ngIf="prenda" #fmodificaPrenda="ngForm" >
   <div class="form-row">
-    <div class="col-md-3 mb-3">
+    <div class="col-md-3 mb-3" *ngIf="prenda.nombre">
       <label for="validationDefault01">Nombre de prenda</label>
-      <input  name="esUnNombreValido" ngModel pattern="[a-zA-Z ]*" type="text" class="form-control" [(ngModel)]="prenda.nombre"  value="" required>
+     / <input  name="esUnNombreValido"   pattern="[a-zA-Z ]*" type="text" class="form-control" [(ngModel)]="prenda.nombre"  value='' required>
       <label class="rojo" *ngIf=invalido.imagen>Nombre Incorrecto</label>
     </div>
     <div class="col-md-3 mb-3">
       <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Talla</label>
-      <select name="esTallaValida" ngModel pattern="[SMG]*" class="custom-select my-1 mr-sm-2" [(ngModel)]="prenda.talla"   id="inlineFormCustomSelectPref" required>
+      <select name="esTallaValida" pattern="[SMG]*" class="custom-select my-1 mr-sm-2" [(ngModel)]="prenda.talla"  value='' id="inlineFormCustomSelectPref" required>
         <option selected>Seleciona</option>
-        <option value="S">S</option>
+        <option value="S" >S</option>
         <option value="M">M</option>
         <option value="G">G</option>
       </select>
@@ -37,9 +37,8 @@
   </div>
   <div class="form-row col-md-6 mb-3">
     <label for="exampleFormControlTextarea1">Descripción</label>
-      <textarea class="form-control" [(ngModel)]="prenda.descripcion" name="descripcion" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea class="form-control" [(ngModel)]="prenda.descripcion" name="descripcion" id="exampleFormControlTextarea1" rows="3">
+      </textarea>
   </div>
-  <button class="btn btn-primary col-md-3 mb-3" type="submit">Publicar</button>
+  <button class="btn btn-primary col-md-3 mb-3 nav-link btn btn-primary" [routerLink]="['/listadoRopa/']" type="submit">Modificar  </button>
 </form>
-
-

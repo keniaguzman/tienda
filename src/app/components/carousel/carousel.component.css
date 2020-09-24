@@ -1,0 +1,13 @@
+#carouselExampleControls{
+  width: 90%;
+  height: 50%;
+  background-position: center;
+  background-size: cover;
+  margin-right: 50%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+}
+.centrar {
+  text-align: center;
+}
