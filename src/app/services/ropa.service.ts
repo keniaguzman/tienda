@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams, HttpRequest, HttpErrorResponse } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RopaService {
-  baseUrl:string = "http://127.0.0.1:8000/api/ropa/";
-  ruta:string = "http://127.0.0.1:8000/api/ropa/update/"
+  baseUrl:string = environment.baseUrl;
+  ruta:string = environment.ruta;
 
   constructor(private http: HttpClient,
    ) { }
